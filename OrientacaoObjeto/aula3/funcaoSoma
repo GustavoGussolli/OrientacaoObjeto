@@ -1,0 +1,12 @@
+<?php
+
+    function soma($num1,$num2){
+
+        $soma = $num1 + $num2 ;
+        // echo $soma . "\n";
+        return $soma;
+
+    }
+
+    $soma = soma(1 , 2);
+    echo $soma . "\n";
