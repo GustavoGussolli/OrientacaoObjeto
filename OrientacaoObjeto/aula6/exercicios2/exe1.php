@@ -10,10 +10,16 @@
 
         public function getValorTotal(){
 
-            $valorTotal = $this->getQuantidade() * $this->getValorUnitario();
-
             return $this->getDescricao() . " | " . $this->getunidadeMedida() . " | " . $this->getquantidade() . " x "
-            . $this->getvalorUnitario() . " = " . $valorTotal . "\n";
+            . $this->getvalorUnitario() . " = " . $this->valorTotal() . "\n";
+
+        }
+
+        public function valorTotal(){
+
+        $valorTotal = $this->getQuantidade() * $this->getValorUnitario();
+
+        return $valorTotal;
 
         }
 
