@@ -76,6 +76,7 @@
             echo "\n-----------MENU-----------\n";
             echo "1- Cadastrar\n";
             echo "2- Listar\n";
+            echo "3- Remover\n";
             echo "0- SAIR\n";
             
     $opcao = readline("Escolha a opção: ");
@@ -104,8 +105,24 @@
 
                 echo "\n Pessoas cadastradas: \n";
 
-                foreach($pessoas as $p)
+                if(count($pessoas) == 0){
+
+                    echo "Não há pessoas cadastradas \n";
+
+                } else{
+
+                    foreach($pessoas as $p)
                     echo $p;
+
+                }
+                
+                    break;
+
+                case 3:
+
+                    $remover = readline("Informe quem remover: ");
+
+                    array_splice($pessoas, $remover,1);
                     break;
                 
 
