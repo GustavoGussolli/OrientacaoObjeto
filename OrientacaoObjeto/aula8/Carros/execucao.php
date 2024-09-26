@@ -50,30 +50,38 @@
                 $c->setAnoFabricacao(readline("Informe o Ano de Fabricação: "));
 
                 $fabri = new fabricante;
+                $siglaValida = false;
+
+                while($siglaValida == false){
+
                 $fabri->setSigla(readline("Informe a sigla: "));
 
                 foreach($ListaFabricante as $f){
-
+                     
                     if($fabri->getSigla() == $f->getSigla()){
 
-                        echo "Sigla certa \n";
+                        echo "Carro Adicionado! \n";
                         $c->setFabricante($f);
-
-                    } else{
-
-                        $fabri->setSigla(readline("Informe a sigla: "));
+                        array_push($ListaCarros, $c);
+                        $siglaValida = true;
                     }
                 }
 
-                array_push($ListaCarros, $c);
-
+                if($siglaValida == false){
+                    echo "Sigla Errada \n";
+                }
+            }
                 break;
 
             case '2';
+                
                 array_splice($ListaCarros, $indiceRemocao, 1);
+                echo "Carro Deletado com Sucesso! \n";
                 break;
 
             case '3';
+
+            echo "Listando os Carros: \n";
                 foreach($ListaCarros as $car){
 
                     echo "Modelo: " . $car->getModelo() . "\n";
