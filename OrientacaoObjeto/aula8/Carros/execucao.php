@@ -25,7 +25,7 @@
 
 
     $ListaCarros = array();
-    $indiceRemocao = 1;
+    $indiceRemocao = 0;
     
     do{
 
